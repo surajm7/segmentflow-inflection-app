@@ -1,6 +1,6 @@
 # SegmentFlow - User Segmentation & Campaign Management
 
-![SegmentFlow Screenshot](https://./screenshot.png) <!-- Replace with actual screenshot URL if available -->
+[Visit SegmentFlow App ](https://segmentflow-8if003vrn-surajm7s-projects.vercel.app/)
 
 ## 🚀 Overview
 
@@ -27,30 +27,29 @@
 - Monitor **open rates** and **click-through rates**
 - Visualize engagement over time
 - Compare performance across campaigns
+### 💻 Technologies Used
+- React (with TypeScript)
+- Lucide React (Icon Library)
+- React Hooks (useState, useEffect, useMemo)
+
+### 🌟 Future Enhancements
+
+- Import/export users via CSV or JSON
+
+- Campaign scheduling capabilities
+
+ - A/B testing support
+
+ - Enhanced analytics (funnel, pie charts, etc.)
+
+ - User tagging system
+
+ - Integration with ESPs (Mailchimp, SendGrid, etc.)
+
+
 
 ---
 
-## 🗂️ Project Structure
-
-segment-flow/
-├── public/
-├── src/
-│ ├── components/
-│ │ ├── AnalyticsDashboard.tsx
-│ │ ├── CampaignList.tsx
-│ │ ├── CampaignModal.tsx
-│ │ ├── FilterCard.tsx
-│ │ ├── Header.tsx
-│ │ ├── TabButton.tsx
-│ │ └── UserList.tsx
-│ ├── constants/
-│ │ └── index.ts
-│ ├── types/
-│ │ └── index.ts
-│ ├── App.tsx
-│ └── index.tsx
-├── package.json
-└── README.md
 
 
 ---
