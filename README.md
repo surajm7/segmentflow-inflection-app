@@ -27,6 +27,26 @@
 - Monitor **open rates** and **click-through rates**
 - Visualize engagement over time
 - Compare performance across campaigns
+### 💻 Technologies Used
+- React (with TypeScript)
+- Lucide React (Icon Library)
+- React Hooks (useState, useEffect, useMemo)
+
+### 🌟 Future Enhancements
+
+- Import/export users via CSV or JSON
+
+- Campaign scheduling capabilities
+
+ - A/B testing support
+
+ - Enhanced analytics (funnel, pie charts, etc.)
+
+ - User tagging system
+
+ - Integration with ESPs (Mailchimp, SendGrid, etc.)
+
+
 
 ---
 
