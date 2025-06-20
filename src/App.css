@@ -1,0 +1,1467 @@
+/* ========== Global Styles ========== */
+
+/* Reset default margin and apply a consistent font stack across browsers */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ========== App Layout ========== */
+
+/* Define base container with full viewport height and light background */
+.app-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* ========== Header Section ========== */
+
+/* Sticky header with white background, subtle border and shadow */
+.header {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Flex layout for header content with spacing between items */
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========== Logo Section ========== */
+
+/* Logo container with horizontal layout and subtle hover effect */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+/* Circular icon with gradient background inside logo */
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Main brand name text */
+.logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #111827;
+  line-height: 1.2;
+}
+
+/* Subtext under the logo, typically a slogan or description */
+.logo-subtext {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.3;
+}
+
+/* ========== User Count Badge ========== */
+
+/* Rounded badge showing online user count with green dot indicator */
+.user-count {
+  font-size: 14px;
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Green circle shown before the user count number */
+.user-count::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+
+/* ========== Responsive Header Adjustments ========== */
+
+/* Adjust padding and font sizes for smaller screens */
+@media (max-width: 640px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .logo-subtext {
+    font-size: 12px;
+  }
+
+  .user-count {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+/* ========== Main Content Container ========== */
+
+/* Centralized layout container for page content */
+.main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ========== Tab Navigation ========== */
+
+/* Tab navigation layout with spacing between tab buttons */
+.tab-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+/* Base tab button style with interaction states */
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+/* Active tab styling with blue background and white text */
+.tab-button.active {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Inactive tab styling with muted text and hover feedback */
+.tab-button.inactive {
+  color: #4b5563;
+  background-color: transparent;
+}
+
+.tab-button.inactive:hover {
+  background-color: #f3f4f6;
+}
+
+/* ========== Card Component ========== */
+
+/* Card wrapper with white background and subtle border/shadow */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+}
+
+/* Header inside the card, used for titles and actions */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+/* Card title text style */
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ========== Button Variants ========== */
+
+/* Primary action button with solid blue background */
+.primary-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Full-width gradient button used for CTA actions */
+.gradient-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  justify-content: center;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(to right, #1d4ed8, #6d28d9);
+}
+
+/* Secondary button with outline style */
+.secondary-button {
+  padding: 8px 16px;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.secondary-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* ========== Filter Section ========== */
+
+/* Light background filter card container */
+.filter-card {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Grid layout for filter inputs */
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Standard dropdown/select styling */
+.select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Text input field used in filters */
+.input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  flex: 1;
+}
+
+/* Button for removing filter rows with red hover effect */
+.remove-button {
+  padding: 8px;
+  color: #dc2626;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #fef2f2;
+}
+
+
+.filter-card {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.logic-connector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.filter-description {
+  margin-bottom: 12px;
+  padding: 6px 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.filter-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.select, .input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.value-control {
+  display: flex;
+  gap: 8px;
+}
+
+.remove-button {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ========== User List Section ========== */
+
+/* List item showing user info with spacing */
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* User info section with avatar and name */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Colored circular avatar with initials */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* User name text */
+.user-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Company or role text below user name */
+.user-company {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ========== User Plan Badges ========== */
+
+/* Common badge style for subscription plans */
+.plan-badge {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 9999px;
+}
+
+/* Purple badge for enterprise users */
+.plan-enterprise {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+
+/* Blue badge for premium users */
+.plan-premium {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* Grey badge for free users */
+.plan-free {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* ========== Empty State Message ========== */
+
+/* Centered message for empty results or no data */
+.empty-state {
+  text-align: center;
+  padding: 32px 0;
+  color: #6b7280;
+}
+
+/* Faded icon displayed above empty state text */
+.empty-state-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  opacity: 0.3;
+}
+
+
+
+
+
+
+/* ========== Modal Styles ========== */
+
+/* Full-screen overlay with semi-transparent black background to dim the page */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 50; /* Ensure modal appears above other elements */
+}
+
+/* Modal content container with max width and scrollable content */
+.modal-content {
+  background-color: white;
+  border-radius: 12px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Header section of modal including title and optional subtitle */
+.modal-header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Primary title text for the modal */
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Smaller subtitle below the title in the modal */
+.modal-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Modal body that holds the form or custom content */
+.modal-body {
+  padding: 24px;
+}
+
+/* Container for each input field and label in the form */
+.form-group {
+  margin-bottom: 24px;
+}
+
+/* Form label styling */
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/* Single-line text input style */
+.text-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+/* Multi-line textarea styling */
+.textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+/* Grid layout for form fields displayed side-by-side */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Footer section of the modal with action buttons */
+.modal-footer {
+  padding: 24px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ========== Metrics Styles ========== */
+
+/* Responsive grid layout for displaying metric cards */
+.metrics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Individual metric card container */
+.metric-card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+}
+
+/* Container for metric icon with consistent size and alignment */
+.metric-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background variations for different metric types */
+.metric-icon-blue {
+  background-color: #dbeafe;
+}
+
+.metric-icon-green {
+  background-color: #dcfce7;
+}
+
+.metric-icon-purple {
+  background-color: #f3e8ff;
+}
+
+/* Bold value text inside a metric card */
+.metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111827;
+}
+
+/* Label text underneath or beside a metric value */
+.metric-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ========== Campaign Item Styles ========== */
+
+/* Card-like layout for campaign items with spacing and borders */
+.campaign-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+/* Icon block for campaigns, usually logo or initials */
+.campaign-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to right, #10b981, #3b82f6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Main text label for campaign name */
+.campaign-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Subtext for campaign metadata like creation date or owner */
+.campaign-meta {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Generic action button used for interacting with items */
+.action-button {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Gray-colored button variant */
+.action-button-gray {
+  color: #4b5563;
+}
+
+/* Blue-colored button variant */
+.action-button-blue {
+  color: #2563eb;
+}
+
+/* ========== Analytics Section ========== */
+
+/* Vertical layout for stacking analytical components */
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Grid layout to show charts side by side */
+.chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Wrapper for individual chart blocks */
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Title for a chart section */
+.chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Orange background icon variation for metrics */
+.metric-icon-orange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #ffedd5;
+}
+
+
+
+
+
+
+
+
+
+/* ========== Toggle Button ========== */
+
+/* Toggle button with no background/border and flex layout for icon alignment */
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ========== Input Field with Icon ========== */
+
+/* Wrapper to allow positioning an icon inside an input */
+.input-with-icon {
+  position: relative;
+}
+
+/* Icon positioned inside input on the left */
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+/* Utility class to add left padding (36px) to accommodate the icon */
+.pl-9 {
+  padding-left: 2.25rem;
+}
+
+/* ========== Campaign List ========== */
+
+/* List container for campaign cards stacked vertically */
+.campaign-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Campaign card with white background and rounded corners */
+.campaign-item {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+/* Main clickable section inside a campaign card */
+.campaign-main {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+  gap: 16px;
+}
+
+/* Info section (title, meta) stretches to fill remaining space */
+.campaign-info {
+  flex: 1;
+}
+
+/* Metadata row with small text and spacing between items */
+.campaign-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* Badge for campaign status (e.g. Draft, Live) */
+.status-badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Additional info like scheduling time, aligned horizontally */
+.schedule-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Buttons for actions (edit, delete, etc.) inside a campaign */
+.campaign-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Collapsible details section under campaign main */
+.campaign-details {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+/* Each row of detail info */
+.detail-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+/* Label for detail rows */
+.detail-label {
+  font-weight: 500;
+  min-width: 80px;
+  color: #4b5563;
+}
+
+/* Action buttons group under details (e.g. Save, Cancel) */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Smaller button variation */
+.small {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+/* ========== Modal Styles ========== */
+
+/* Full-screen overlay with dark background for modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content box with shadow and scroll support */
+.modal-content {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top section of modal for title and subtitle */
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Modal title styling */
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+/* Modal subtitle with muted text */
+.modal-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0.25rem 0 0;
+}
+
+/* Main content area of modal with scroll and flexible height */
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Footer with aligned buttons */
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* ========== Form Styles ========== */
+
+/* Form group with no bottom margin */
+.form-group {
+  margin-bottom: 0;
+}
+
+/* Label styling for form fields */
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Input and textarea with consistent design */
+.text-input, .textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #111827;
+  background-color: white;
+}
+
+/* Focus styles for input and textarea */
+.text-input:focus, .textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Allow vertical resizing for textarea */
+.textarea {
+  resize: vertical;
+}
+
+/* ========== Utility & Layout Classes ========== */
+
+/* Repeated for consistency */
+.input-with-icon {
+  position: relative;
+}
+
+/* Repeated: input icon style */
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+/* Padding-left utility (2.25rem / 36px) */
+.pl-9 {
+  padding-left: 2.25rem;
+}
+
+/* Vertical spacing between children (24px) */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Vertical spacing between children (16px) */
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Generic grid container */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Apply 16px gap inside grid layout */
+.gap-4 {
+  gap: 1rem;
+}
+
+/* Padding-top utility */
+.pt-4 {
+  padding-top: 1rem;
+}
+
+/* Top border utility */
+.border-t {
+  border-top-width: 1px;
+}
+
+/* Border color utility */
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+/* Medium font weight */
+.font-medium {
+  font-weight: 500;
+}
+
+/* Custom minimum height utility */
+.min-h-150px {
+  min-height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== Button Styles ========== */
+
+/* Common button styles for both primary and secondary */
+.primary-button, .secondary-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* 6px */
+  font-size: 0.875rem;     /* 14px */
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Primary button with solid background and hover/disabled states */
+.primary-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+}
+
+.primary-button:hover {
+  background-color: #4338ca;
+}
+
+.primary-button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* Secondary button with border and subtle hover feedback */
+.secondary-button {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.secondary-button:hover {
+  background-color: #f9fafb;
+}
+
+/* ========== Toggle Button ========== */
+
+/* Reusable toggle button (e.g. for schedule/email toggles) */
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* ========== Utility Classes ========== */
+
+/* Vertical spacing between children elements */
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Text and font utilities */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+/* Padding and border utilities */
+.pl-9 {
+  padding-left: 2.25rem; /* For icons inside inputs */
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+/* Flexbox alignment helpers */
+.flex.items-center.gap-3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.flex.items-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ========== Modal Styles ========== */
+
+/* Modal content wrapper with max width and layout */
+.modal-content {
+  width: 100%;
+  max-width: 42rem; /* 672px */
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal body area (scrollable if content overflows) */
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+/* Modal footer area with buttons aligned to right */
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* ========== Form Styles ========== */
+
+/* Wrapper for each input/field group */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Input fields */
+.text-input, .textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+
+/* Minimum height and resizable textarea */
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* ========== Schedule Section ========== */
+
+/* Container for scheduling fields */
+.schedule-section {
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Toggle switch row in schedule section */
+.schedule-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Padding to align inputs with icon offset */
+.schedule-fields {
+  padding-left: 2.25rem;
+}
+
+/* Two-column grid for date/time fields */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* ========== Input with Icon ========== */
+
+/* Wrapper to hold icon inside input field */
+.input-with-icon {
+  position: relative;
+}
+
+/* Icon inside the input field */
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+/* Adjust input padding when used with icon */
+.input-with-icon input {
+  padding-left: 2.25rem;
+}
+
+/* ========== Test Email Section ========== */
+
+/* Container with top border and padding */
+.test-email-section {
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Grid layout for email input + send button */
+.test-email-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding-left: 2.25rem;
+}
+
+/* ========== Responsive Styles ========== */
+
+@media (max-width: 640px) {
+  /* Collapse schedule fields to single column */
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack test email input and button vertically */
+  .test-email-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+/* ========== Enhanced Schedule Section Styles ========== */
+
+/* Container for the entire schedule section */
+.schedule-section {
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1.5rem; /* Adds spacing above the section */
+}
+
+/* Flex container for toggle + preview, spaced apart */
+.schedule-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* Group toggle elements (switch and label) in a row */
+.schedule-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Button to toggle schedule settings with hover feedback */
+.schedule-toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 9999px; /* Fully rounded */
+  transition: background-color 0.2s;
+}
+
+.schedule-toggle-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Preview text showing selected date/time */
+.schedule-preview {
+  font-size: 0.875rem; /* 14px */
+  color: #6b7280;
+}
+
+/* Container for schedule fields (date/time inputs) with animation */
+.schedule-fields {
+  padding-left: 2.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Grid layout for date and time fields */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Quick select buttons row (e.g., Now, In 1 Hour) */
+.schedule-quick-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Button styling for quick schedule options */
+.schedule-quick-button {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem; /* 12px */
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.schedule-quick-button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* ========== Enhanced Date/Time Input Styles ========== */
+
+/* Wrapper for input + icon */
+.schedule-input-group {
+  position: relative;
+}
+
+/* Icon placed inside input (calendar or clock) */
+.schedule-input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* Date input field with icon spacing */
+.schedule-date-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem; /* extra left padding for icon */
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #111827;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Hover and focus states for better UX */
+.schedule-date-input:hover {
+  border-color: #9ca3af;
+}
+
+.schedule-date-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Time dropdown (select element) with similar styling */
+.schedule-time-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: #111827;
+  background-color: white;
+  appearance: none;
+  cursor: pointer;
+}
+
+.schedule-time-select:hover {
+  border-color: #9ca3af;
+}
+
+.schedule-time-select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ========== Animation ========== */
+
+/* Smooth fade-in animation for dynamic UI sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Responsive Adjustments ========== */
+
+@media (max-width: 640px) {
+  /* Stack fields vertically on small screens */
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack quick buttons vertically */
+  .schedule-quick-options {
+    flex-direction: column;
+  }
+
+  .schedule-quick-button {
+    width: 100%;
+    text-align: center;
+  }
+}

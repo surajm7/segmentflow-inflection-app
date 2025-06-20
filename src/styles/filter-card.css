@@ -1,0 +1,50 @@
+/* Filter Card Container */
+.filter-card {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Row Layout for Filters */
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Select Dropdown */
+.select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 14px;
+  background-color: white;
+  color: #374151;
+}
+
+/* Input Field */
+.input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+  color: #374151;
+}
+
+/* Remove Button (× icon) */
+.remove-button {
+  padding: 8px;
+  color: #dc2626;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.remove-button:hover {
+  background-color: #fef2f2;
+}

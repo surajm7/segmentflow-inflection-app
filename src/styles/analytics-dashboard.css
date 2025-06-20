@@ -1,0 +1,90 @@
+/* Overall Analytics Container */
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Metrics Summary Section */
+.metrics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Metric Card */
+.metric-card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+}
+
+/* Icon Container */
+.metric-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Color Variants */
+.metric-icon-blue {
+  background-color: #dbeafe;
+}
+
+.metric-icon-green {
+  background-color: #dcfce7;
+}
+
+.metric-icon-purple {
+  background-color: #f3e8ff;
+}
+
+.metric-icon-orange {
+  background-color: #ffedd5;
+}
+
+/* Metric Text */
+.metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Chart Section */
+.chart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Individual Chart Card */
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Title */
+.chart-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+  .chart-container {
+    grid-template-columns: 1fr;
+  }
+}

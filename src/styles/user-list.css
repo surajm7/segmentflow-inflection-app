@@ -1,0 +1,108 @@
+/* Card Wrapper */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+}
+
+/* Header Section */
+.user-list-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* Title inside card */
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* User List Container */
+.user-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Empty State */
+.user-list-empty {
+  text-align: center;
+  padding: 32px 0;
+  color: #6b7280;
+}
+
+/* Individual User Item */
+.user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+/* User Info Block */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar (Initial Circle) */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Name & Company */
+.user-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.user-company {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Badge Container */
+.plan-badge-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Plan Badge Styling */
+.plan-badge {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+.plan-enterprise {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+
+.plan-premium {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.plan-free {
+  background-color: #f3f4f6;
+  color: #374151;
+}
