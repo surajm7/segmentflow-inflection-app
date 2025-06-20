@@ -34,7 +34,7 @@ export interface Campaign {
   content: string;
   cta: string;
   ctaUrl: string;
-  status: 'draft' | 'scheduled' | 'sent';
+  status: 'draft' | 'scheduled' | 'sent'| 'active';
   targetUsers: number;
 }
 export interface Campaign {

@@ -733,7 +733,29 @@ body {
   background-color: #ffedd5;
 }
 
+  /* Demo campaign styling */
+.demo-campaign {
+  opacity: 0.9;
+  border-left: 3px solid #e2e8f0;
+}
 
+.demo-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background-color: #f1f5f9;
+  color: #64748b;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Disable some actions for demo campaigns */
+.demo-campaign .action-button-blue {
+  opacity: 0.5;
+  pointer-events: none;
+}
 
 
 

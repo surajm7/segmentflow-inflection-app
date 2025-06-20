@@ -3,7 +3,7 @@
 // Importing the User type definition
 // constants.ts
 // Importing the User type definition
-import type { User } from '../types/types';
+import type { Campaign, User } from '../types/types';
 
 /**
  * Mock user data to simulate real users in the system.
@@ -77,3 +77,69 @@ export const campaignPerformanceData = [
   { name: 'Re-engagement', opens: 20, clicks: 8 },
   { name: 'Survey Request', opens: 38, clicks: 18 },
 ];
+
+export const demoCampaigns: Campaign[] = [
+  {
+    id: 'demo-onboarding',
+    name: 'New User Onboarding',
+    status: 'active',
+    targetUsers: 1243,
+    subject: "Welcome to Acme Inc - Let's get started!",
+    content: `Hi there,
+
+Thank you for choosing Acme Inc! Here's how to begin:
+
+1. Complete your profile (2 minutes)
+2. Connect your first data source
+3. Explore our starter templates
+
+Need help? Reply to this email anytime.
+
+Cheers,
+The Acme Team`,
+    cta: 'Complete Setup',
+    ctaUrl: 'https://app.acmeinc.com/onboarding',
+    schedule: new Date(Date.now() + 3600000).toISOString(),
+    segment: [] // Empty segment
+  },
+  {
+    id: 'demo-newsletter',
+    name: 'Monthly Newsletter',
+    status: 'scheduled',
+    targetUsers: 5821,
+    subject: 'Your Monthly Product Updates',
+    content: `Hi valued customer,
+
+This month's highlights:
+
+• New feature releases
+• Upcoming webinars
+• Customer success stories
+
+We appreciate you being part of our community!`,
+    cta: 'View Updates',
+    ctaUrl: 'https://acmeinc.com/updates',
+    schedule: new Date(Date.now() + 604800000).toISOString(),
+    segment: [] // Empty segment
+  },
+  {
+    id: 'demo-promo',
+    name: 'Special Promotion',
+    status: 'draft',
+    targetUsers: 0, // Will be calculated
+    subject: 'Limited-time offer just for you',
+    content: `Hi friend,
+
+We're offering an exclusive discount for our loyal users:
+
+- 20% off annual plans
+- Free implementation guide
+- Priority support
+
+This offer expires soon!`,
+    cta: 'Claim Offer',
+    ctaUrl: 'https://app.acmeinc.com/special-offer',
+    segment: [] // Empty segment
+  }
+];
+
