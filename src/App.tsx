@@ -8,6 +8,9 @@ import { mockUsers } from './constants';
 
 // Types for users, filters, campaigns, and tabs
 import type { SegmentFilter, Campaign, ActiveTab } from './types/types';
+// import "./index.css"
+// If your CSS file is located elsewhere, update the path accordingly, for example:
+// import "./styles/index.css"
 
 // App components
 import { Header } from './components/Header';
